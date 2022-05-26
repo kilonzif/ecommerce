@@ -10,7 +10,10 @@
         {% for product in all_products %}
         <div class="col-md-4">
             <div class="card">
-                <img src="media/{{product.image1}}" alt="{{ product.product_name }}">
+               
+               <a href="{% url 'view_product' product.id %}">
+                <img src="media/{{product.image1}}" alt="{{ product.product_name }}" >
+               </a> 
 
                 <div class="card-body">
                     <h5>{{ product.product_name }}</h5>
@@ -19,7 +22,9 @@
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary">Add To Cart</button>
+                    <!-- <a href="{% url 'view_product' product.id %}">View Image</a> -->
                 </div>
+
                 
             </div>
         </div>

@@ -48,3 +48,9 @@ def logout_user(request):
     logout(request)
     messages.info(request,"You have Logged Out")
     return redirect ("home")
+
+
+
+def view_product(request,id):
+    product = Product.objects.filter(id=id).first()
+    return render(request, 'product_details.html',{'product':product})
